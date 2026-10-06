@@ -11,8 +11,8 @@ func Calc(nums []int64) Stats {
 	}
 	diff := nums[1] - nums[0]
 	s := Stats{Count: len(nums) - 1, Sum: diff, Min: diff, Max: diff}
-	i := 2
-	for ; i < len(nums); i++ {
+
+	for i := 2; i < len(nums); i++ {
 		diff = nums[i] - nums[i-1]
 		if diff < s.Min {
 			s.Min = diff

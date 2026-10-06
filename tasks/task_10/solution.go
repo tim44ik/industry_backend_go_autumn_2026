@@ -127,11 +127,6 @@ func (h *httpHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	}
 
 	if id, ok := strings.CutPrefix(r.URL.Path, "/tasks/"); ok {
-		if id == "" || strings.Contains(id, "/") {
-			w.WriteHeader(404)
-			return
-		}
-
 		switch r.Method {
 		case "GET":
 			h.handleGet(w, r, id)
